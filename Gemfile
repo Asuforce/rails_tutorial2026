@@ -31,7 +31,7 @@ group :test do
   gem "capybara",                 "~> 3.39"
   gem "selenium-webdriver",       "~> 4.19"
   gem "rails-controller-testing", "~> 1.0"
-  gem "minitest",                 "~> 6.0"
+  gem "minitest",                 "~> 5.20"
   gem "minitest-reporters",       "~> 1.7"
   gem "guard",                    "~> 2.18"
   gem "guard-minitest",           "~> 2.4"
