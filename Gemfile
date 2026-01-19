@@ -35,4 +35,5 @@ group :test do
   gem "minitest-reporters",       "~> 1.7"
   gem "guard",                    "~> 2.18"
   gem "guard-minitest",           "~> 2.4"
+  gem "rb-readline",              "~> 0.5"
 end
