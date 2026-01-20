@@ -3,17 +3,19 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "4.0.1"
 
-gem "rails",           "7.1.6"
-gem "sass-embedded",   "1.97.2"
-gem "sprockets-rails", "~> 3.5"
-gem "importmap-rails", "2.2.3"
-gem "turbo-rails",     "2.0.21"
-gem "stimulus-rails",  "~> 1.3"
-gem "jbuilder",        "2.14.1"
-gem "puma",            "7.1.0"
-gem "bootsnap",        "~> 1.18", require: false
-gem "sqlite3",         "~> 1.7"
-gem "concurrent-ruby", "~> 1.3"
+gem "rails",              "7.1.6"
+gem "dartsass-sprockets", "3.2.1"
+gem "sass-embedded",      "1.97.2"
+gem "bootstrap",          "~> 5.3"
+gem "sprockets-rails",    "~> 3.5"
+gem "importmap-rails",    "2.2.3"
+gem "turbo-rails",        "2.0.21"
+gem "stimulus-rails",     "~> 1.3"
+gem "jbuilder",           "2.14.1"
+gem "puma",               "7.1.0"
+gem "bootsnap",           "~> 1.18", require: false
+gem "sqlite3",            "~> 1.7"
+gem "concurrent-ruby",    "~> 1.3"
 
 group :development, :test do
   gem "reline", "0.6.3"
