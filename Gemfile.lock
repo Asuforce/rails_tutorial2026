@@ -86,6 +86,7 @@ GEM
     ast (2.4.3)
     backport (1.2.0)
     base64 (0.3.0)
+    bcrypt (3.1.21)
     benchmark (0.5.0)
     bigdecimal (4.0.1)
     bindex (0.8.1)
@@ -466,6 +467,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  bcrypt (= 3.1.21)
   bootsnap (~> 1.18)
   bootstrap (~> 5.3)
   capybara (~> 3.39)
