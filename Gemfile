@@ -40,3 +40,7 @@ group :test do
   gem "guard-minitest",           "~> 2.4"
   gem "rb-readline",              "~> 0.5"
 end
+
+group :production do
+  gem "pg", "1.3.5"
+end
