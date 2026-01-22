@@ -92,3 +92,16 @@ class RememberingTest < UsersLogin
     assert_empty cookies[:remember_token]
   end
 end
+
+class FriendlyForwardingTest < UsersLogin
+
+  test "friendly forwarding only forwards to the given URL the first time" do
+    get edit_user_path(@user)
+    log_in_as(@user)
+    assert_redirected_to edit_user_path(@user)
+
+    delete logout_path
+    log_in_as(@user)
+    assert_redirected_to @user
+  end
+end

@@ -1,0 +1,14 @@
+<% provide(:title, 'All users') %>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-5 fw-bold">All Users</h1>
+
+  <%== @pagy.series_nav(:bootstrap) %>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <%= render @users %>
+  </div>
+
+  <%== @pagy.series_nav(:bootstrap) %>
+
+</div>
