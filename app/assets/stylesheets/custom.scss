@@ -177,7 +177,7 @@ textarea {
   @include box_sizing;
 }
 
-input {
+input:not([type="checkbox"]) {
   height: auto !important;
 }
 
