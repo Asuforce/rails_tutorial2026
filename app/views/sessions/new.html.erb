@@ -1,0 +1,31 @@
+<% provide(:title, "Log in") %>
+<h1 class="text-center mb-4">Log in</h1>
+
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4">
+    <div class="card shadow-sm p-4">
+      <%= form_with(url: login_path, scope: :session) do |f| %>
+
+        <div class="mb-3">
+          <%= f.label :email, class: "form-label" %>
+          <%= f.email_field :email, class: 'form-control', placeholder: "email@example.com" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :password, class: "form-label" %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+
+        <div class="d-grid gap-2">
+          <%= f.submit "Log in", class: "btn btn-primary btn-lg mt-2" %>
+        </div>
+      <% end %>
+
+      <hr class="my-4">
+
+      <p class="text-center mb-0">
+        New user? <%= link_to "Sign up now!", signup_path, class: "text-decoration-none" %>
+      </p>
+    </div>
+  </div>
+</div>
