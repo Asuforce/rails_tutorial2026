@@ -3,6 +3,7 @@
 # If running the rails server then create or migrate existing database
 if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
   DISABLE_DATABASE_ENVIRONMENT_CHECK=1 ./bin/rails db:migrate:reset
+  ./bin/rails db:seed
   ./bin/rails db:prepare
 fi
 
