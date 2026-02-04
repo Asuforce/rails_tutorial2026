@@ -1,16 +1,30 @@
 <div class="row mt-4">
   <aside class="col-md-4">
-    <section class="user_info mb-4 p-3 border rounded shadow-sm bg-light">
-      <%= render 'shared/user_info' %>
-    </section>
-    <section class="micropost_form p-3 border rounded shadow-sm bg-light">
-      <%= render 'shared/micropost_form' %>
-    </section>
+    <div class="card shadow-sm border-0 mb-4">
+      <div class="card-body">
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+
+        <section class="stats">
+          <%= render 'shared/stats' %>
+        </section>
+
+        <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </div>
+    </div>
   </aside>
+
   <div class="col-md-8">
     <section class="micropost_feed">
-      <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
+      <h3 class="h4 mb-3 fw-bold">Micropost Feed</h3>
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <%= render 'shared/feed' %>
+        </div>
+      </div>
     </section>
   </div>
 </div>

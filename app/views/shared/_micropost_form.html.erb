@@ -1,14 +1,25 @@
 <%= form_with(model: @micropost) do |f| %>
-  <%= render 'shared/error_messages', object: f.object, object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="field mb-3">
+    <%= f.text_area :content,
+        placeholder: "Compose new micropost...",
+        class: "form-control shadow-none",
+        rows: 3 %>
   </div>
-  <div class="mb-3">
-    <%= f.label :image, "Upload Image", class: "form-label" %>
-    <%= f.file_field :image, class: "form-control", accept: "image/jpeg,image/gif,image/png" %>
-    <div id="size-error" class="text-danger mt-1" style="display: none;">
-      File size is too large (maximum 5MB)
+
+  <div class="image-upload-section mb-3">
+    <%= f.label :image, class: "form-label small fw-bold text-muted" do %>
+      Add Image
+    <% end %>
+    <%= f.file_field :image,
+        class: "form-control form-control-sm",
+        accept: "image/jpeg,image/gif,image/png" %>
+
+    <div id="size-error" class="text-danger small mt-1" style="display: none;">
+      ファイルサイズが大きすぎます (最大 5MB)
     </div>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+
+  <%= f.submit "投稿する", class: "btn btn-primary w-100 fw-bold shadow-sm" %>
 <% end %>

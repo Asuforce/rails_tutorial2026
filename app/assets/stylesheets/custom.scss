@@ -129,41 +129,105 @@ footer {
 /* sidebar */
 
 aside {
-  section.user_info {
-    margin-top: 20px;
+  .card {
+    border-radius: 12px; // 少し丸みを強くしてモダンに
+    overflow: hidden;
+  }
+}
+
+.user_info {
+  display: flex;
+  flex-direction: column;
+
+  .user-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+
+    .gravatar {
+      float: none;
+      border-radius: 50%;
+    }
+  }
+}
+
+.user-profile-header {
+  .gravatar {
+    border-radius: 50%;
+    border: 1px solid #dee2e6;
+    float: none;
   }
 
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-
+  .user-names {
     h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      letter-spacing: normal;
+    }
+
+    .small,
+      small {
+        font-size: 0.85rem;
+        display: block;
+    }
+
+    a {
+      &:hover {
+        text-decoration: underline !important;
+      }
     }
   }
 }
 
 .gravatar {
-  float: left;
+  border-radius: 50%;
+  object-fit: block;
 }
 
-.gravatar_edit {
-  margin-top: 15px;
+.user-stats-summary {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.stats {
+  a {
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #f8f9fa;
+
+      .stat {
+        color: #007bff !important;
+      }
+    }
+  }
+
+  .stat {
+    line-height: 1.2;
+  }
+}
+
+/* Micropost Form Custom */
+.micropost_form {
+  textarea {
+    resize: none;
+    border: 1px solid #dee2e6;
+
+    &:focus {
+      border-color: #80bdff;
+      background-color: #f8f9ff;
+    }
+  }
+
+  .btn-primary {
+    border-radius: 20px;
+    padding: 8px 0;
+  }
+}
+
+.form-control-sm {
+  font-size: 0.8rem;
 }
 
 /* forms */
