@@ -1,0 +1,57 @@
+<% provide(:title, @title) %>
+
+<div class="row g-4">
+  <aside class="col-md-4">
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <section class="user_info text-center mb-3">
+          <div class="mb-2">
+            <%= link_to gravatar_for(@user, size: 80), @user, class: "rounded-circle" %>
+          </div>
+          <h2 class="h4 card-title mb-1"><%= @user.name %></h2>
+          <div class="small text-muted mb-2">
+            <%= link_to "view my profile", @user, class: "text-decoration-none" %>
+          </div>
+          <div class="badge bg-primary text-wrap">
+            Microposts: <%= @user.microposts.count %>
+          </div>
+        </section>
+
+        <hr>
+
+        <section class="stats">
+          <%= render 'shared/stats' %>
+          <% if @users.any? %>
+            <div class="user_avatars mt-3 d-flex flex-wrap gap-1">
+              <% @users.each do |user| %>
+                <%= link_to gravatar_for(user, size: 30), user, class: "opacity-75 hover-opacity-100" %>
+              <% end %>
+            </div>
+          <% end %>
+        </section>
+      </div>
+    </div>
+  </aside>
+
+  <div class="col-md-8">
+    <div class="card shadow-sm">
+      <div class="card-header bg-white py-3">
+        <h3 class="h5 mb-0 text-secondary"><%= @title %></h3>
+      </div>
+      <div class="card-body p-0">
+        <% if @users.any? %>
+          <ul class="list-group list-group-flush border-0">
+            <%# _user.html.erb 内で list-group-item クラスを使っている前提 %>
+            <%= render @users %>
+          </ul>
+        <% else %>
+          <div class="p-4 text-center text-muted">No users found.</div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+      <%== @pagy.series_nav(:bootstrap) if @users.any? %>
+    </div>
+  </div>
+</div>
